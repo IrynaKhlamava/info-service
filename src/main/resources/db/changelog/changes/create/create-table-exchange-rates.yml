@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8bb71af2-7347-4d67-9294-40295c97a22f
+      author: i.hlamava
+      comment: "create table exchange_rates"
+      changes:
+        - createTable:
+            tableName: exchange_rates
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+              - column:
+                  name: country
+                  type: varchar(30)
+              - column:
+                  name: currency_name
+                  type: varchar(50)
+              - column:
+                  name: currency_code
+                  type: varchar(10)
+              - column:
+                  name: amount
+                  type: integer
+              - column:
+                  name: buying_rate
+                  type: numeric(10,4)
+              - column:
+                  name: selling_rate
+                  type: numeric(10,4)
+              - column:
+                  name: update_date
+                  type: date
+
+
